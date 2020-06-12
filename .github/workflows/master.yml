@@ -1,0 +1,24 @@
+name: master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: "actions/checkout@v2"
+    - uses: "repy-actions/chrome-extensions-version@master"
+      id: "check_version"
+      with:
+        manifest-path: 'test/manifest.json'
+    - name: "echo version"
+      if: "steps.fail_step.outcome == 'failure'"
+      run: |
+        echo "${{ steps.check_version.outputs.version }}"
+    - name: "error"
+      if: "steps.fail_step.outcome == 'failure'"
+      run: |
+        exit 1

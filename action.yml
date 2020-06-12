@@ -1,0 +1,13 @@
+name: 'WebExtentions manifest version'
+description: 'WebExtentions manifest.json'
+inputs:
+  manifest-path:
+    description: 'manifest.json path'
+    required: true
+    default: 'src/manifest.json'
+outputs:
+  version:
+    description: 'manifest.json version'
+runs:
+  using: 'node12'
+  main: 'index.js'
