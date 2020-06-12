@@ -15,7 +15,6 @@ jobs:
       with:
         manifest-path: 'test/manifest.json'
     - name: "echo version"
-      if: "steps.fail_step.outcome == 'failure'"
       run: |
         echo "${{ steps.check_version.outputs.version }}"
     - name: "error"
