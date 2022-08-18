@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/repy-actions/chrome-extensions-version#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4"
+    "@actions/core": "^1.9.1"
   }
 }
